@@ -1,17 +1,24 @@
 package com.wmcourse.warehouseapp.config;
 
-import com.wmcourse.warehouseapp.article.ArticlePriceManagementService;
-import com.wmcourse.warehouseapp.article.ArticlePropertiesManagementService;
-import com.wmcourse.warehouseapp.article.ArticleSearchEngineService;
+import com.wmcourse.warehouseapp.article.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
 
 @Configuration
 public class SubServiceConfiguration {
 
+    private final List<SearchTextGenerator> searchTextGeneratorList;
+
+    @Autowired
+    public SubServiceConfiguration(List<SearchTextGenerator> searchTextGeneratorList) {
+        this.searchTextGeneratorList = searchTextGeneratorList;
+    }
+
     @Bean
     public ArticlePriceManagementService articlePriceManagementService() {
-
         return new ArticlePriceManagementService();
     }
 
@@ -22,12 +29,8 @@ public class SubServiceConfiguration {
 
     @Bean
     public ArticleSearchEngineService articleSearchEngineService() {
-
-        return new ArticleSearchEngineService();
+        return new ArticleSearchEngineService(searchTextGeneratorList);
     }
-
-
-
 
 
 

@@ -40,24 +40,5 @@ public class MainArticleServiceConfiguration {
     }
 
 
-//    @Bean
-//    public NotificationService emailNotificationService() {
-//        return new EmailNotification();
-//    }
-//
-//    @Bean
-//    public NotificationService smsNotificationService() {
-//        return new SmsNotification();
-//    }
-//
-//    @Bean
-//    public NotificationService whatsAppNotificationService() {
-//        return new WhatsAppNotification();
-//    }
-//
-//    @Bean
-//    public NotificationService messengerNotificationService() {
-//        return new MessengerNotification();
-//    }
 
 }

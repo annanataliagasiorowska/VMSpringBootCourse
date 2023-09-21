@@ -16,4 +16,8 @@ public class ArticleService {
         this.articlePropertiesManagementService = propertiesManagementService;
         this.articleSearchEngineService = searchEngineService;
     }
+
+    public void search() {
+        articleSearchEngineService.search();
+    }
 }

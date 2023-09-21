@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-@Profile("dev")
+//@Profile("dev")
 public class SmsNotification implements NotificationService {
     @Override
     public String sendNotification() {
